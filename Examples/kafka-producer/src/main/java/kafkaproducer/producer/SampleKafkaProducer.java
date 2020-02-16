@@ -51,8 +51,8 @@ public class SampleKafkaProducer {
 		/**
 		 * This approach of sending message is
 		 * called asynchronous approach,
-		 * you provide a callBack mechanism ater the message
-		 * is received successfully at kafka.
+		 * you provide a callBack mechanism, which is called 
+		 * after the message is received successfully at kafka.
 		 */
 		MyCallBack myCallBack = new MyCallBack();
 		producer.send(producerRecord, myCallBack);
