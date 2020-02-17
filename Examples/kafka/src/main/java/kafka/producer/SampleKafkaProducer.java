@@ -1,4 +1,4 @@
-package kafkaproducer.producer;
+package kafka.producer;
 
 import java.util.Properties;
 import java.util.concurrent.Callable;
