@@ -1,0 +1,21 @@
+There are two typs of offset in kafka
+1- current offset - maintain by partition for not sending duplicate records by consumer
+   This offset means that till here records have bean read by the consumer.
+   
+2- Committed offset - This offset means that how many records of the partition have been 
+   successfully processed and committed by the consumer. This is critical in case of consumer
+   re-balancing.In case the re-balancing happens this offset tells the new member where to 
+   records read from. 
+   
+Commit types:
+1- Auto commit(default) - two properties
+   enable.auto.commit
+   auto.commit.interval.ms
+   problem with this type of commit is that messages can be reprocessed by the consumer
+   in case the commit period has not passed and re-balancing happens.
+
+2- Manual commit -
+   a- sync commit - this commit retries if commit fails, so this most reliable but a blocking method
+   	  so this reduces the throughput.
+   b - Async commit - This commit dont retries if commit fails, because some afterwards commit happens
+       to be successful, there is no need to commit the previous failed commit.
