@@ -19,3 +19,7 @@ Commit types:
    	  so this reduces the throughput.
    b - Async commit - This commit dont retries if commit fails, because some afterwards commit happens
        to be successful, there is no need to commit the previous failed commit.
+       
+Note : If consumer goes down after processing the records and before committing the offset, 
+	   in that case we can use database to maintain the processed recods and committed offset and 
+	   make these two methods (processing the records and committing the offset) transactional. 
