@@ -1,0 +1,15 @@
+For example you created a producer and consumer in Kafka for the processing a custom class, that works fine for the time.
+After some time you realize that some more feilds needs to be added/removed from the custom class, ijn that case both produce
+and consumer needs to be changed and this requires a lot of work.
+
+Solution to the above problem is AVRO tool, with AVRO you can do below
+1- Define a schema in JSON format
+2- Create your custom class using AVRO tool.
+3- To serialize you kafka record use the serializer provided by AVRO (KafkaAVROSerializer)
+4- A schema registry is also creaeted so that your producer record schema can be registered there
+   and can be used by KafkaAVRODeserilizer to consume the records
+5- AVRO also provide KafkaAvRODeserializer for to deserializing the records.
+6- Now whenever records are modified with some more fields, just change the schema and create the new records
+   and you dont need to change the producer and consumer code AVRO handles that for you automatically.
+7- AVRO even allows to to producer to send and process the records with old schemas, along with the records
+   with new schema. 

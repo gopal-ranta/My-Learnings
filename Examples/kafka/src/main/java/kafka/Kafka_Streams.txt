@@ -1,0 +1,3 @@
+Kafka Stream is a tool (jars/bundles) which helps you to process the bulk of data in the real time, this uses the clustered
+model for processing the data with better throughput and fault tollerence.
+You can also provide the number of thread which will be running your consumer process for better throughputs
