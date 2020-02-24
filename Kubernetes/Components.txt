@@ -1,0 +1,24 @@
+Kubernetes consists of below components
+
+1- API server (listen to kubectl command and other request)
+
+2- etdc - distributed database to manage master and worker node.
+
+3- Scheduler - responsible for assigning work to master and worker nodes, looks for new container and assign them to 
+               worker node.
+
+4- Controller - Brain of the kubernetes, when nodes/pods/cluster etc goes down, controller comes into play and start 
+				starts the new one if required.
+
+		/**
+		* Above four components resides in Master node.
+		*/	
+				
+5- Container Runtime - underline software on which container applications run, in most of the cases it Docker.
+		     But there are some other options as well like rkt etc.
+
+6- Kubelete - These are the agent running on each container to insure the each node is running as expected.    
+
+		/**
+		* Above three components resides in Master node.
+		*/	
